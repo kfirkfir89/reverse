@@ -1,8 +1,8 @@
 :root{
-    --primary-color: #1D5888;
-    --secondary-color: #FF9A3B; /*#1CA8FC-blue*/
+    --primary-color: #794719;
+    --secondary-color: #f7df1e; /*#1CA8FC-blue*/
     --dark-color: #292929;
-    --white-color: #dff3e4;
+    --white-color: #FFFEF5;
 }
 
 .smallfont{
@@ -19,6 +19,7 @@
 
 body {
     color:var(--dark-color);
+    background-color: var(--white-color);
 }
 
 nav {
@@ -85,4 +86,5 @@ code[class*="language-"], pre[class*="language-"] {
 main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
+    
 }

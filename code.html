@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Kfir Avraham</title>
+    <title>REVERSE: A Coding Project By Kfir Avraham</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="/img/favicon-32x32.png"
-                    class="d-inline-block align-text-top pe-2"></img>APP NAME</a>
+                    class="d-inline-block align-text-top pe-2"></img>REVERSE</a>
             <div class="vl d-none d-md-block"></div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
                         <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/kfirkfir89/reverse">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="#">About</a>
@@ -61,16 +61,63 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8 order-last order-lg-first">
                     <pre class="line-numbers"><code class="language-javascript">
-                        function helloWorld(){
-                            alert("hello world");
+                        //Get the string fromt he page
+                        //Controller function
+                        function getValues(){
+                        
+                            document.getElementById("alert").classList.add("invisible");
+                            let userString = document.getElementById("userString").value;
+                            let revString = reverseString(userString);
+                            displayString(revString);
+                        
+                        }
+                        
+                        //Reverse the string
+                        //Logic function
+                        function reverseString(userString){
+                        
+                            let revString = [];
+                            //reverse a string using a for loop
+                            for (let index = userString.length - 1; index >= 0; index--) {
+                                revString += userString[index];
+                            }
+                            return revString;
+                        
+                        }
+                        
+                        //Display the reverse string to the user
+                        //View Function
+                        function displayString(revString){
+                        
+                            //wrtie to the page
+                            document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`
+                            //show the alert box
+                            document.getElementById("alert").classList.remove("invisible");
+                        
                         }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
                     <p>The Code is structed in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+
+                    <h5>getValues</h5>
+                    <p><strong>getValues</strong> gets the user input from the page.
+                         it utilizes <strong>getElementById</strong> to pull the values from the page.
+                         it stores it in <strong>userString</strong> and then passes those values to the <strong>reverseString </strong>function.<br>
+                         The function <strong>reverseString</strong> returns an array of values and passes that array to the <strong>displayString</strong> function to display the <strong>revString</strong> array.
+                        </p>
+
+                    <h5>reverseString</h5>
+                    <p><strong>reverseString</strong> takes in <strong>userString</strong> array.
+                        We create new array <strong>revString</strong> to stores the new reversed array.<br>
+                        A for loop is used to pull the values to the new array. The loop start counting from the last index of <strong>userString</strong> array and pull the strings in reverse to the new <strong>revString</strong> array.
+                        </p>
+                        
+                    <h5>displayString</h5>
+                    <p><strong>displayString</strong> takes in <strong>revString</strong> array and display the reversed array in alert box that shows up when display.
+                        <br>The alret is using the classList.remove to show up the alert window message by remove the class "invisible".
+                        </p>
                 </div>
             </div>
         </div>
